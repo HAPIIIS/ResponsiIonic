@@ -9,18 +9,21 @@ import { filter, map, take } from 'rxjs/operators';
 })
 
 export class AutoLoginGuard implements CanLoad {
-  constructor(private authService: AuthenticationService, private router: Router) { 
-}
+  constructor(private authService: AuthenticationService, private router: Router) {
+  }
   canLoad(): Observable<boolean> {
-    console.log('cek sesi login');
+    console.log('cek sesi login')
     return this.authService.isAuthenticated.pipe(
-      filter((val) => val !== null), // Filter out initial Behaviour subject value
-      take(1), // Otherwise the Observable doesn't complete!
+      filter((val) => val !== null),
+      take(1),
       map((isAuthenticated) => {
         if (isAuthenticated) {
           console.log('Ada sesi login, redirect ke dashboard');
-          // Jika ada sesi login
-          this.router.navigateByUrl('/home', { replaceUrl: true });
+
+          this.router.navigateByUrl('/mahasiswa', {
+            replaceUrl: true
+          });
+
         } else {
           console.log('tidak ada sesi login');
           return true;

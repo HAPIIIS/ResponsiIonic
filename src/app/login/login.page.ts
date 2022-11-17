@@ -3,8 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { Http } from '@capacitor-community/http';
 import { Preferences } from '@capacitor/preferences';
+
 const TOKEN_KEY = 'token-saya';
 const USERNAME = 'namasaya';
+
 @Component({
  selector: 'app-login',
  templateUrl: './login.page.html',
