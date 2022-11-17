@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { MahasiswaEditPageRoutingModule } from './mahasiswa-edit-routing.module';
-
 import { MahasiswaEditPage } from './mahasiswa-edit.page';
 
 @NgModule({
