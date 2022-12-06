@@ -8,13 +8,16 @@ export class ApiService {
 
   constructor(
     public http: HttpClient,
-  ) { }
+  ) {
 
-  apiURL(){
-    return "http://localhost/api";
   }
 
-  getMahasiswa(){
+  //link API
+  apiURL() {
+    return "http://localhost/crud";
+  }
+
+  getMahasiswa() {
     return this.http.get(this.apiURL() + '/tampil.php');
   }
 
@@ -25,4 +28,6 @@ export class ApiService {
   ambilMahasiswa(id) {
     return this.http.get(this.apiURL() + '/lihat.php?nim=' + id);
   }
+
+
 }

@@ -25,7 +25,7 @@ const routes: Routes = [
     canLoad: [AuthGuard]
   },
   {
-    path: 'mahasiswa-edit',
+    path: 'mahasiswa-edit/:nim',
     loadChildren: () => import('./mahasiswa-edit/mahasiswa-edit.module').then(m => m.MahasiswaEditPageModule),
     canLoad: [AuthGuard]
   },

@@ -1,20 +1,42 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Tambah Mahasisa</ion-title>
+  </ion-toolbar>
 
-import { IonicModule } from '@ionic/angular';
+</ion-header>
 
-import { MahasiswaTambahPageRoutingModule } from './mahasiswa-tambah-routing.module';
-
-import { MahasiswaTambahPage } from './mahasiswa-tambah.page';
-
-@NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    MahasiswaTambahPageRoutingModule
-  ],
-  declarations: [MahasiswaTambahPage]
-})
-export class MahasiswaTambahPageModule { }
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">
+        Tambah Mahasiswa
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list lines="full">
+    <ion-item>
+      <ion-label position="floating">NIM</ion-label>
+      <ion-input required [(ngModel)]="nim" placeholder="NIM Mahasiswa" type="text">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nama</ion-label>
+      <ion-input required [(ngModel)]="nama" placeholder="Nama Mahasiswa" type="text">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Alamat</ion-label>
+      <ion-input required [(ngModel)]="alamat" placeholder="Alamat Mahasiswa" type="text">
+      </ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="button" (click)="addMahasiswa()" color="primary" shape="full" expand="block">Tambah Mahasiswa
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+</ion-content>
