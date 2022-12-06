@@ -1,22 +1,29 @@
 <ion-header>
   <ion-toolbar>
-  <ion-title>Login Page</ion-title>
+    <ion-title>Login Page</ion-title>
   </ion-toolbar>
- </ion-header>
- <ion-content>
+</ion-header>
+ 
+<ion-content>
   <ion-item lines="full">
-  <ion-label position="floating">Username</ion-label>
-  <ion-input type="text" [(ngModel)]="username" required="required"></ion-input>
+    <div color="dark"  slot="start">
+      <ion-icon slot="icon-only" name="person" ></ion-icon>
+    </div>
+    <ion-input type="text" [(ngModel)]="username" placeholder="Username" required="required"></ion-input>
   </ion-item>
+  
   <ion-item lines="full">
-  <ion-label position="floating">Password</ion-label>
-  <ion-input type="password" [(ngModel)]="password" required="required">
- </ion-input>
+    <div color="dark"  slot="start">
+      <ion-icon slot="icon-only" name="lock-closed" ></ion-icon>
+    </div>
+    <ion-input type="password" [(ngModel)]="password" placeholder="Password" required="required">
+    </ion-input>
   </ion-item>
+  
   <ion-row>
   <ion-col>
   <ion-button type="submit" color="success" expand="block"
- (click)="login()">Login</ion-button>
+  (click)="login()">Login</ion-button>
   </ion-col>
   </ion-row>
  </ion-content>
